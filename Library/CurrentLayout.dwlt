@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 3}
-  m_MinSize: {x: 950, y: 494}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -71,7 +71,7 @@ MonoBehaviour:
     y: 0
     width: 1366
     height: 685
-  m_MinSize: {x: 950, y: 494}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &4
 MonoBehaviour:
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_MinSize: {x: 917, y: 444}
   m_MaxSize: {x: 22012, y: 10022}
   vertical: 0
-  controlID: 53
+  controlID: 77
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -355,8 +355,8 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
+      m_SelectedIDs: 54300000
+      m_LastClickedID: 12372
       m_ExpandedIDs: 8efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -459,8 +459,7 @@ MonoBehaviour:
   m_StartGridSize: 64
   m_LastFolders: []
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\ATH\Desktop\AnT\study\Unity19\Unity5\02.Templete Project\TankAttack
-    Templet
+  m_LastProjectPath: C:\Users\ATH\Desktop\AnT\study\Unity19\TankAttack Templet
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
