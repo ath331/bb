@@ -6,11 +6,13 @@ ScriptsOnlyBuild:
     - UnityStandardAssets.Utility.SmoothFollow
     Assembly-CSharp.dll:
     - AudioRpc
+    - BillboardCanvas
     - Cannon
     - CannonCtrl
     - ClickAndDrag
     - ClickDetector
     - ColorPerPlayerApply
+    - DisplayUserId
     - ExitGames.Demos.DemoAnimator.CameraWork
     - ExitGames.Demos.DemoAnimator.PlayerAnimatorManager
     - ExitGames.Demos.DemoAnimator.PlayerManager
@@ -38,6 +40,7 @@ ScriptsOnlyBuild:
     - PickupController
     - PlayerDiamond
     - RPGMovement
+    - RoomData
     - ServerSettings
     - ShowInfoOfPlayer
     - TankDamage
@@ -56,8 +59,12 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.GridLayoutGroup
     - UnityEngine.UI.Image
     - UnityEngine.UI.InputField
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Shadow
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
@@ -92,14 +99,34 @@ ScriptsOnlyBuild:
     - Class: 111
       Script: {instanceID: 0}
     - Class: 114
+      Script: {instanceID: 9450}
+    - Class: 114
+      Script: {instanceID: 9452}
+    - Class: 114
+      Script: {instanceID: 9458}
+    - Class: 114
+      Script: {instanceID: 9464}
+    - Class: 114
+      Script: {instanceID: 9472}
+    - Class: 114
+      Script: {instanceID: 9480}
+    - Class: 114
+      Script: {instanceID: 9508}
+    - Class: 114
+      Script: {instanceID: 9510}
+    - Class: 114
       Script: {instanceID: 10108}
     - Class: 114
-      Script: {instanceID: 24452}
+      Script: {instanceID: 10576}
+    - Class: 114
+      Script: {instanceID: 10936}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 121
       Script: {instanceID: 0}
     - Class: 124
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 154
       Script: {instanceID: 0}
@@ -107,7 +134,15 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
     - Class: 218
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
     - Class: 1953259897
       Script: {instanceID: 0}
@@ -187,9 +222,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9464}
     - Class: 114
+      Script: {instanceID: 9466}
+    - Class: 114
       Script: {instanceID: 9472}
     - Class: 114
       Script: {instanceID: 9474}
+    - Class: 114
+      Script: {instanceID: 9480}
+    - Class: 114
+      Script: {instanceID: 9498}
+    - Class: 114
+      Script: {instanceID: 9500}
     - Class: 114
       Script: {instanceID: 9508}
     - Class: 114
@@ -253,29 +296,35 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10560}
     - Class: 114
-      Script: {instanceID: 10592}
+      Script: {instanceID: 10594}
     - Class: 114
-      Script: {instanceID: 10658}
+      Script: {instanceID: 10660}
     - Class: 114
-      Script: {instanceID: 10674}
+      Script: {instanceID: 10668}
     - Class: 114
-      Script: {instanceID: 10690}
+      Script: {instanceID: 10678}
     - Class: 114
-      Script: {instanceID: 10838}
+      Script: {instanceID: 10694}
     - Class: 114
-      Script: {instanceID: 10856}
+      Script: {instanceID: 10842}
     - Class: 114
-      Script: {instanceID: 10890}
+      Script: {instanceID: 10860}
     - Class: 114
-      Script: {instanceID: 10898}
+      Script: {instanceID: 10894}
     - Class: 114
-      Script: {instanceID: 10932}
+      Script: {instanceID: 10902}
     - Class: 114
-      Script: {instanceID: 10950}
+      Script: {instanceID: 10936}
     - Class: 114
-      Script: {instanceID: 10996}
+      Script: {instanceID: 10954}
     - Class: 114
-      Script: {instanceID: 15864}
+      Script: {instanceID: 11000}
+    - Class: 114
+      Script: {instanceID: 20316}
+    - Class: 114
+      Script: {instanceID: 21576}
+    - Class: 114
+      Script: {instanceID: 51012}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 121
@@ -1425,6 +1474,12 @@ ScriptsOnlyBuild:
     className: DataPrivacyButton
   - hash:
       serializedVersion: 2
+      Hash: 2d06944f910fddd9697ded8247be4af4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameMgr
+  - hash:
+      serializedVersion: 2
       Hash: f336e086360abe49a3323e5f1583c35a
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -1455,6 +1510,12 @@ ScriptsOnlyBuild:
     className: ThirdPersonCamera
   - hash:
       serializedVersion: 2
+      Hash: d0a190f761c94e081f0cffa9cd976d1a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TankDamage
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1467,7 +1528,7 @@ ScriptsOnlyBuild:
     className: RpsDemoConnect
   - hash:
       serializedVersion: 2
-      Hash: b73c6819f5cbb3ab0a014f7741c874ec
+      Hash: 7b765be333ee69d075b7fb2b29cae2ab
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PhotonInit
@@ -1650,13 +1711,19 @@ ScriptsOnlyBuild:
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: TankDamage
+    className: BillboardCanvas
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 518a5affecce232dba25cb1057da8531
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: GameMgr
+    className: DisplayUserId
+  - hash:
+      serializedVersion: 2
+      Hash: 8348a3a044eb80fc239b913dd7f57063
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RoomData
   platform: 5
   scenePathNames:
   - Assets/01.Scenes/scLobby.unity
