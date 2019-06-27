@@ -65,7 +65,9 @@
     <Compile Include="Assets\02.Scripts\Cannon.cs" />
     <Compile Include="Assets\02.Scripts\CannonCtrl.cs" />
     <Compile Include="Assets\02.Scripts\FireCannon.cs" />
+    <Compile Include="Assets\02.Scripts\GameMgr.cs" />
     <Compile Include="Assets\02.Scripts\PhotonInit.cs" />
+    <Compile Include="Assets\02.Scripts\TankDamage.cs" />
     <Compile Include="Assets\02.Scripts\TankMove.cs" />
     <Compile Include="Assets\02.Scripts\TrackAnim.cs" />
     <Compile Include="Assets\02.Scripts\TurretCtrl.cs" />
@@ -425,6 +427,12 @@
     <Reference Include="nunit.framework">
       <HintPath>C:/Program Files/Unity19/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="Photon3Unity3D">
+      <HintPath>C:/Users/ATH/Desktop/AnT/study/Unity19/TankAttack Templet/Assets/Plugins/Photon3Unity3D.dll</HintPath>
+    </Reference>
+    <Reference Include="websocket-sharp">
+      <HintPath>C:/Users/ATH/Desktop/AnT/study/Unity19/TankAttack Templet/Assets/Plugins/WebSocket/websocket-sharp.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Analytics.Editor">
       <HintPath>C:/Users/ATH/Desktop/AnT/study/Unity19/TankAttack Templet/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
@@ -433,12 +441,6 @@
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>C:/Users/ATH/Desktop/AnT/study/Unity19/TankAttack Templet/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
-    </Reference>
-    <Reference Include="Photon3Unity3D">
-      <HintPath>C:/Users/ATH/Desktop/AnT/study/Unity19/TankAttack Templet/Assets/Plugins/Photon3Unity3D.dll</HintPath>
-    </Reference>
-    <Reference Include="websocket-sharp">
-      <HintPath>C:/Users/ATH/Desktop/AnT/study/Unity19/TankAttack Templet/Assets/Plugins/WebSocket/websocket-sharp.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity19/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
