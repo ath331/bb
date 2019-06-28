@@ -19,6 +19,7 @@ public class FireCannon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (MouseHover.instance.isUIHover) return;
         if (pv.isMine && Input.GetMouseButtonDown(0))
         {
             Fire();
@@ -28,7 +29,8 @@ public class FireCannon : MonoBehaviour
     [PunRPC]
     void Fire()
     {
-        Instantiate(cannon, firePos.position, firePos.rotation);
+        GameObject _cannon = (GameObject)Instantiate(cannon, firePos.position, firePos.rotation);
+        _cannon.GetComponent<Cannon>().playerId = pv.ownerId;
     }
     
 }

@@ -14,6 +14,11 @@ public class TankDamage : MonoBehaviour
     public Canvas hudCanvas;
     public Image hpBar;
 
+    private PhotonView pv = null;
+    public int playerId = -1;
+    public int killCount = 0;
+    public Text txtKillCount;
+
     void Awake()
     {
         renderers = GetComponentsInChildren<MeshRenderer>();
@@ -22,6 +27,9 @@ public class TankDamage : MonoBehaviour
         expEffect = Resources.Load<GameObject>("Large Explosion");
 
         hpBar.color = Color.green;
+
+        pv = GetComponent<PhotonView>();
+        playerId = pv.ownerId;
     }
 
     private void OnTriggerEnter(Collider coll )
@@ -40,6 +48,7 @@ public class TankDamage : MonoBehaviour
             }
             if(currHp <= 0 )
             {
+                SaveKillCount(coll.GetComponent<Cannon>().playerId);
                 StartCoroutine(this.ExplosionTank());
             }
         }
@@ -67,6 +76,31 @@ public class TankDamage : MonoBehaviour
         foreach(MeshRenderer _renderer in renderers)
         {
             _renderer.enabled = isVisible;
+        }
+    }
+
+    void SaveKillCount( int firePlayerId)
+    {
+        GameObject[] tanks = GameObject.FindGameObjectsWithTag("TANK");
+
+        foreach( GameObject tank in tanks)
+        {
+            var tankDamage = tank.GetComponent<TankDamage>();
+            if( tankDamage != null && tankDamage.playerId == firePlayerId)
+            {
+                tankDamage.IncKillCount();
+                break;
+            }
+        }
+    }
+
+    void IncKillCount()
+    {
+        ++killCount;
+        txtKillCount.text = killCount.ToString();
+        if(pv.isMine)
+        {
+            PhotonNetwork.player.AddScore(1);
         }
     }
 }

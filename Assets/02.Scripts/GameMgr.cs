@@ -19,11 +19,33 @@ public class GameMgr : MonoBehaviour
 
         GetConnectPlayerCount();
     }
-    private void Start()
+    IEnumerator Start()
     {
         string msg = "\n<color=#00ff00>[" + PhotonNetwork.player.NickName + "] Connectd</color>";
         pv.RPC("LogMsg", PhotonTargets.AllBuffered, msg);
+
+        yield return new WaitForSeconds(1.0f);
+        SetConnectPlayerScore();
     }
+
+    void SetConnectPlayerScore()
+    {
+        PhotonPlayer[] players = PhotonNetwork.playerList;
+        foreach (PhotonPlayer _player in players)
+        {
+            Debug.Log("[" + _player.ID + _player.NickName + " " + _player.GetScore() + " kill");
+        }
+
+        GameObject[] tanks = GameObject.FindGameObjectsWithTag("TANK");
+        foreach (GameObject tank in tanks)
+        {
+            int currKillCount = tank.GetComponent<PhotonView>().owner.GetScore();
+            tank.GetComponent<TankDamage>().txtKillCount.text = currKillCount.ToString();
+        }
+
+    }
+
+
 
     void CreateTank()
     {
@@ -40,7 +62,7 @@ public class GameMgr : MonoBehaviour
 
     void OnPhotonPlayerConnected(PhotonPlayer newPlayer)
     {
-       // Debug.Log(newPlayer.ToStringFull());
+        // Debug.Log(newPlayer.ToStringFull());
         GetConnectPlayerCount();
     }
 
